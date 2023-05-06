@@ -59,7 +59,7 @@ bookRouter.get("/books?category", async (req, res) => {
     res.status(200).send(books)
 })
 
-bookRouter.get("/books/author&category", async (req, res) => {
+bookRouter.get("/books?author&category", async (req, res) => {
     let aut = req.query.author
     let cat = req.query.category
     let books = await BookModel.find({ author: aut, category: cat })
